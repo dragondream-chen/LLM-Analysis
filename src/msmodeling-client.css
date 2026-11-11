@@ -1,0 +1,89 @@
+#msmodeling-panel {
+  box-sizing: border-box;
+  margin: 0 0 24px;
+  padding: 22px;
+  border: 1px solid #406072;
+  border-radius: 14px;
+  background: #121e2b;
+  color: #e3edf6;
+  line-height: 1.6;
+  font-size: 14px;
+}
+#msmodeling-panel * { box-sizing: border-box; }
+#msmodeling-panel h3 { margin: 0 0 8px; color: #eef7ff; font-size: 20px; }
+#msmodeling-panel h4 { margin: 18px 0 6px; color: #eef7ff; font-size: 17px; }
+#msmodeling-panel p { margin: 8px 0; }
+#msmodeling-panel .msm-intro { color: #c3d4e4; }
+#msmodeling-panel .msm-connection,
+#msmodeling-panel .msm-controls,
+#msmodeling-panel .msm-actions,
+#msmodeling-panel .msm-artifacts { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 14px 0; }
+#msmodeling-panel .msm-field { display: flex; flex: 0 1 250px; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 500; }
+#msmodeling-panel .msm-connection .msm-field { flex: 1 1 300px; }
+#msmodeling-panel input {
+  width: 100%;
+  min-width: 0;
+  height: 39px;
+  padding: 7px 10px;
+  border: 1px solid #557086;
+  border-radius: 6px;
+  background: #0b1622;
+  color: #eef7ff;
+  font: inherit;
+}
+#msmodeling-panel button {
+  min-height: 39px;
+  padding: 8px 13px;
+  border: 1px solid #5b839e;
+  border-radius: 6px;
+  background: #21455d;
+  color: #f1f8ff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+#msmodeling-panel button:hover:enabled { background: #2e5b78; }
+#msmodeling-panel button:disabled { cursor: default; opacity: 0.45; }
+#msmodeling-panel input:disabled { opacity: 0.6; }
+#msmodeling-panel :focus-visible { outline: 3px solid #91d7ff; outline-offset: 3px; }
+#msmodeling-panel .msm-engine,
+#msmodeling-panel .msm-help { color: #aebfd0; font-size: 12px; overflow-wrap: anywhere; }
+#msmodeling-panel .msm-status {
+  min-height: 38px;
+  padding: 8px 11px;
+  border-left: 3px solid #6c9fc1;
+  background: #182a3a;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+#msmodeling-panel .msm-status[data-state="error"] { border-color: #ff9a8f; color: #ffd0c9; background: #392328; }
+#msmodeling-panel .msm-status[data-state="success"] { border-color: #7cd3af; color: #bcf2d7; }
+#msmodeling-panel .msm-stale { color: #f6d18b; font-size: 13px; }
+#msmodeling-panel .msm-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 14px 0; }
+#msmodeling-panel .msm-metrics > div { min-width: 0; padding: 12px; border: 1px solid #334b60; border-radius: 8px; background: #101b27; }
+#msmodeling-panel dt { color: #aebfd0; font-size: 12px; }
+#msmodeling-panel dd { margin: 5px 0 0; color: #eef7ff; font-variant-numeric: tabular-nums; font-size: 17px; overflow-wrap: anywhere; }
+#msmodeling-panel .msm-warnings { margin: 12px 0; padding: 12px 12px 12px 30px; border: 1px solid #76613d; border-radius: 6px; background: #2c281e; color: #f6d18b; }
+#msmodeling-panel .msm-warnings li + li { margin-top: 5px; }
+#msmodeling-panel a { color: #9ddaff; text-decoration: underline; text-underline-offset: 3px; }
+#msmodeling-panel a:hover { color: #d7efff; }
+#msmodeling-panel details { margin-top: 14px; border-top: 1px solid #334b60; padding-top: 10px; }
+#msmodeling-panel summary { cursor: pointer; color: #c5dfef; }
+#msmodeling-panel .msm-assumptions p { color: #afc0d1; font-size: 12px; }
+#msmodeling-panel pre { max-height: 400px; margin: 10px 0; padding: 12px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #0b1622; border: 1px solid #334b60; border-radius: 6px; color: #c9dbeb; font-size: 12px; }
+#msmodeling-panel .msm-error { color: #ffd0c9; border-color: #86574f; }
+#msmodeling-panel .msm-table-wrap { width: 100%; max-height: 440px; overflow: auto; margin-top: 10px; }
+#msmodeling-panel table { width: 100%; border-collapse: collapse; font-size: 12px; }
+#msmodeling-panel th,
+#msmodeling-panel td { text-align: left; padding: 8px; border-bottom: 1px solid #334b60; overflow-wrap: anywhere; }
+#msmodeling-panel th { position: sticky; top: 0; background: #172a3a; color: #d1e5f5; }
+#msmodeling-panel td:first-child { max-width: 600px; }
+#msmodeling-panel [hidden] { display: none !important; }
+@media (max-width: 600px) {
+  #msmodeling-panel { padding: 14px; border-radius: 10px; }
+  #msmodeling-panel h3 { font-size: 17px; }
+  #msmodeling-panel .msm-field { flex: 1 1 100%; }
+  #msmodeling-panel .msm-connection > button { width: 100%; }
+  #msmodeling-panel .msm-actions > button { flex: 1 1 180px; }
+  #msmodeling-panel .msm-metrics { grid-template-columns: 1fr; }
+}

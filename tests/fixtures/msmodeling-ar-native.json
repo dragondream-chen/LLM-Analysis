@@ -1,0 +1,494 @@
+{
+  "engineRevision": "413889b5b7007803fcc140edf2d89eff733c5890",
+  "case": {
+    "input": 128,
+    "output": 8,
+    "batchPerDP": 1,
+    "DP": 8,
+    "TP": 1,
+    "EP": 8,
+    "device": "ATLAS_850E_486T_96G",
+    "decode": "ar"
+  },
+  "native": {
+    "batch_size": 1,
+    "run_time_s": 2.127642000094056,
+    "execution_time_s": {
+      "analytic": 0.01785318767894474
+    },
+    "tps_per_model": {
+      "analytic": 56.01240618667532
+    },
+    "memory_gb": {
+      "total_device": 96.0,
+      "model_weight": 41.03679062798619,
+      "peak_usage": 41.239866353571415,
+      "kv_cache": 0.0029587745666503906,
+      "kv_cache_per_token": 1.1960044503211975e-05,
+      "kv_cache_token_capacity_factor": 1,
+      "model_activation": 0.06335046514868736,
+      "reserved": 4.0,
+      "available": 50.760133646428585
+    },
+    "breakdowns_raw": {
+      "analytic_OpBound": {
+        "memory_bound": 0.005226436662724154,
+        "communication_bound": 0.000619825703081233,
+        "compute_bound_mma": 3.7110097119341557e-06,
+        "compute_bound_gp": 1.966248559670781e-07
+      }
+    },
+    "breakdowns_percent": {
+      "analytic_OpBound": {
+        "memory_bound": 89.3382,
+        "communication_bound": 10.595,
+        "compute_bound_mma": 0.0634,
+        "compute_bound_gp": 0.0034
+      }
+    },
+    "perf_model_name": "analytic",
+    "profiling_source_scope": "modeled_forward_lookup_latency",
+    "profiling_source_times_s": {
+      "measured": 0.0,
+      "interpolated": 0.0,
+      "analytic": 0.0,
+      "hybrid": 0.0
+    },
+    "profiling_miss_reasons": {},
+    "runtime_event_list": [
+      {
+        "name": "tensor_cast.static_quant_linear_int4.default",
+        "perf_model": "analytic",
+        "perf_total": 0.004020381660055077,
+        "perf_avg": 6.7006361000917954e-06,
+        "call_times": 600
+      },
+      {
+        "name": "tensor_cast.static_quant_linear.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0029541313680133134,
+        "perf_avg": 9.980173540585518e-06,
+        "call_times": 296
+      },
+      {
+        "name": "tensor_cast.dynamic_quantize_symmetric.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0018902753592526167,
+        "perf_avg": 2.019524956466471e-06,
+        "call_times": 936
+      },
+      {
+        "name": "aten._to_copy.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0017149705806426428,
+        "perf_avg": 7.866837525883682e-06,
+        "call_times": 218
+      },
+      {
+        "name": "tensor_cast.all_to_all.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0009921568627450986,
+        "perf_avg": 1.2401960784313732e-05,
+        "call_times": 80
+      },
+      {
+        "name": "aten.bmm.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0009638707756996159,
+        "perf_avg": 2.4096769392490397e-05,
+        "call_times": 40
+      },
+      {
+        "name": "aten.mm.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0006911384446080778,
+        "perf_avg": 1.535863210240173e-05,
+        "call_times": 45
+      },
+      {
+        "name": "aten.cat.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0006640281528830558,
+        "perf_avg": 3.2582343124781933e-07,
+        "call_times": 2038
+      },
+      {
+        "name": "aten.mul.Tensor",
+        "perf_model": "analytic",
+        "perf_total": 0.0006197042761859067,
+        "perf_avg": 2.025177373156558e-06,
+        "call_times": 306
+      },
+      {
+        "name": "tensor_cast.hc_pre_v3.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0004458726390206728,
+        "perf_avg": 5.57340798775841e-06,
+        "call_times": 80
+      },
+      {
+        "name": "aten.silu.default",
+        "perf_model": "analytic",
+        "perf_total": 0.00040419095158576875,
+        "perf_avg": 2.020954757928844e-06,
+        "call_times": 200
+      },
+      {
+        "name": "tensor_cast.rms_norm.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0003368250935934477,
+        "perf_avg": 2.0049112713895695e-06,
+        "call_times": 168
+      },
+      {
+        "name": "tensor_cast.apply_rope_inplace.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0002409473296813662,
+        "perf_avg": 2.007894414011385e-06,
+        "call_times": 120
+      },
+      {
+        "name": "tensor_cast.sparse_index_gather_attention.default",
+        "perf_model": "analytic",
+        "perf_total": 0.00020401983438178556,
+        "perf_avg": 5.100495859544639e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.add.Tensor",
+        "perf_model": "analytic",
+        "perf_total": 0.0001946403183760991,
+        "perf_avg": 2.0066012203721555e-06,
+        "call_times": 97
+      },
+      {
+        "name": "tensor_cast.hc_post.default",
+        "perf_model": "analytic",
+        "perf_total": 0.00016209729478228811,
+        "perf_avg": 2.0262161847786016e-06,
+        "call_times": 80
+      },
+      {
+        "name": "tensor_cast.engram_inject.default",
+        "perf_model": "analytic",
+        "perf_total": 9.955365046858787e-05,
+        "perf_avg": 4.977682523429394e-05,
+        "call_times": 2
+      },
+      {
+        "name": "tensor_cast.unpermute_tokens.default",
+        "perf_model": "analytic",
+        "perf_total": 8.139752955874425e-05,
+        "perf_avg": 2.034938238968606e-06,
+        "call_times": 40
+      },
+      {
+        "name": "tensor_cast.init_routing_v2.default",
+        "perf_model": "analytic",
+        "perf_total": 8.081545294960957e-05,
+        "perf_avg": 2.0203863237402392e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.sum.dim_IntList",
+        "perf_model": "analytic",
+        "perf_total": 8.081490725278851e-05,
+        "perf_avg": 2.0203726813197127e-06,
+        "call_times": 40
+      },
+      {
+        "name": "tensor_cast.clamped_swiglu.default",
+        "perf_model": "analytic",
+        "perf_total": 8.015716068446633e-05,
+        "perf_avg": 2.003929017111658e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.softplus.default",
+        "perf_model": "analytic",
+        "perf_total": 8.003492459654805e-05,
+        "perf_avg": 2.000873114913701e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.sqrt.default",
+        "perf_model": "analytic",
+        "perf_total": 8.003492459654805e-05,
+        "perf_avg": 2.000873114913701e-06,
+        "call_times": 40
+      },
+      {
+        "name": "tensor_cast.moe_gating_top_k.default",
+        "perf_model": "analytic",
+        "perf_total": 8.002701199264262e-05,
+        "perf_avg": 2.0006752998160655e-06,
+        "call_times": 40
+      },
+      {
+        "name": "tensor_cast.scatter_nd_update_mla.default",
+        "perf_model": "analytic",
+        "perf_total": 8.001164153218266e-05,
+        "perf_avg": 2.0002910383045664e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.arange.default",
+        "perf_model": "analytic",
+        "perf_total": 8.001164153218266e-05,
+        "perf_avg": 2.0002910383045664e-06,
+        "call_times": 40
+      },
+      {
+        "name": "aten.clamp.default",
+        "perf_model": "analytic",
+        "perf_total": 8.000018189894032e-05,
+        "perf_avg": 2.000004547473508e-06,
+        "call_times": 40
+      },
+      {
+        "name": "tensor_cast.csa2_prepare_indices.default",
+        "perf_model": "analytic",
+        "perf_total": 7.604562025424091e-05,
+        "perf_avg": 2.0012005330063398e-06,
+        "call_times": 38
+      },
+      {
+        "name": "aten.floor_divide.default",
+        "perf_model": "analytic",
+        "perf_total": 7.600017280399331e-05,
+        "perf_avg": 2.0000045474735084e-06,
+        "call_times": 38
+      },
+      {
+        "name": "aten.empty.memory_format",
+        "perf_model": "analytic",
+        "perf_total": 4.0728836059570323e-05,
+        "perf_avg": 7.405242919921877e-07,
+        "call_times": 55
+      },
+      {
+        "name": "tensor_cast.csa2_index_select.default",
+        "perf_model": "analytic",
+        "perf_total": 4.003520881364238e-05,
+        "perf_avg": 5.004401101705298e-06,
+        "call_times": 8
+      },
+      {
+        "name": "tensor_cast.all_reduce.default",
+        "perf_model": "analytic",
+        "perf_total": 3.766884033613445e-05,
+        "perf_avg": 1.8834420168067226e-05,
+        "call_times": 2
+      },
+      {
+        "name": "tensor_cast.csa2_compressed_rope.default",
+        "perf_model": "analytic",
+        "perf_total": 3.20401632860303e-05,
+        "perf_avg": 2.0025102053768936e-06,
+        "call_times": 16
+      },
+      {
+        "name": "tensor_cast.csa2_cache_update.default",
+        "perf_model": "analytic",
+        "perf_total": 3.2000845830072654e-05,
+        "perf_avg": 2.000052864379541e-06,
+        "call_times": 16
+      },
+      {
+        "name": "tensor_cast.csa2_compressor_v2.default",
+        "perf_model": "analytic",
+        "perf_total": 3.0443650353408883e-05,
+        "perf_avg": 7.610912588352221e-06,
+        "call_times": 4
+      },
+      {
+        "name": "tensor_cast.csa2_query_quant.default",
+        "perf_model": "analytic",
+        "perf_total": 1.6028521753847598e-05,
+        "perf_avg": 2.0035652192309498e-06,
+        "call_times": 8
+      },
+      {
+        "name": "aten.constant_pad_nd.default",
+        "perf_model": "analytic",
+        "perf_total": 1.6006548361852764e-05,
+        "perf_avg": 2.0008185452315955e-06,
+        "call_times": 8
+      },
+      {
+        "name": "tensor_cast.fp4_kv_quantize.default",
+        "perf_model": "analytic",
+        "perf_total": 1.6001859916665125e-05,
+        "perf_avg": 2.0002324895831406e-06,
+        "call_times": 8
+      },
+      {
+        "name": "tensor_cast.engram_table_lookup.default",
+        "perf_model": "analytic",
+        "perf_total": 1.40247726301024e-05,
+        "perf_avg": 7.0123863150512e-06,
+        "call_times": 2
+      },
+      {
+        "name": "aten.index_select.default",
+        "perf_model": "analytic",
+        "perf_total": 4.000150066625792e-06,
+        "perf_avg": 2.000075033312896e-06,
+        "call_times": 2
+      },
+      {
+        "name": "tensor_cast.hc_pre_reduce.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0145564627018756e-06,
+        "perf_avg": 2.0145564627018756e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.repeat.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0145519152283668e-06,
+        "perf_avg": 2.0145519152283668e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.pow.Tensor_Scalar",
+        "perf_model": "analytic",
+        "perf_total": 2.0116415321826934e-06,
+        "perf_avg": 2.0116415321826934e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.embedding.default",
+        "perf_model": "analytic",
+        "perf_total": 2.005823039828101e-06,
+        "perf_avg": 2.005823039828101e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.mean.dim",
+        "perf_model": "analytic",
+        "perf_total": 2.005821902959724e-06,
+        "perf_avg": 2.005821902959724e-06,
+        "call_times": 1
+      },
+      {
+        "name": "tensor_cast.engram_hash_lookup.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0001136868377215e-06,
+        "perf_avg": 2.0001136868377215e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.zeros.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0000045474735088e-06,
+        "perf_avg": 2.0000045474735088e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.copy_.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0000034106051316e-06,
+        "perf_avg": 2.0000034106051316e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.rsqrt.default",
+        "perf_model": "analytic",
+        "perf_total": 2.0000022737367543e-06,
+        "perf_avg": 2.0000022737367543e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.scalar_tensor.default",
+        "perf_model": "analytic",
+        "perf_total": 2.000001136868377e-06,
+        "perf_avg": 2.000001136868377e-06,
+        "call_times": 1
+      },
+      {
+        "name": "aten.unsqueeze.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 161
+      },
+      {
+        "name": "aten.view.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 2333
+      },
+      {
+        "name": "aten.detach.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 416
+      },
+      {
+        "name": "aten.select.int",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 3
+      },
+      {
+        "name": "aten.expand.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 41
+      },
+      {
+        "name": "aten.transpose.int",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 900
+      },
+      {
+        "name": "aten.slice.Tensor",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 2016
+      },
+      {
+        "name": "aten.permute.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 200
+      },
+      {
+        "name": "aten.t.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 41
+      },
+      {
+        "name": "aten._unsafe_view.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 41
+      },
+      {
+        "name": "aten.split_with_sizes.default",
+        "perf_model": "analytic",
+        "perf_total": 0.0,
+        "perf_avg": 0.0,
+        "call_times": 2320
+      }
+    ],
+    "pipeline_stage_latency": [],
+    "pipeline_stage_memory": [],
+    "engram_host_resident_size_gb": 188.8331327587366,
+    "engram_host_resident_per_rank_gb": 23.604141594842076,
+    "host_to_device_bytes": 1584,
+    "host_to_device_time_s": 1.0017678571428573e-05
+  }
+}
