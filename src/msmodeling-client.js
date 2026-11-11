@@ -19,12 +19,23 @@
     if (!container || document.getElementById('msmodeling-panel')) return;
     if (typeof DS41 === 'undefined' || typeof DS41.read !== 'function') return;
 
-    var panel = element('section', 'msm-panel');
+    // Forms must flow at normal CSS sizes, outside the slide's scaled SVG.
+    var diagram = document.getElementById('ds41-pd-diagram');
+    var app = diagram.querySelector('.pd-app');
+    container.replaceChild(app, diagram);
+    container.classList.add('ds41-performance-scroll');
+    container.tabIndex = 0;
+    container.setAttribute('aria-label', '纯 P / 纯 D 仿真，可向下滚动查看完整内容');
+
+    var panel = element('details', 'msm-panel');
     panel.id = 'msmodeling-panel';
     panel.setAttribute('aria-labelledby', 'msm-heading');
+    var heading = element('summary', 'msm-heading');
     var title = element('h3', '', '本地 msmodeling · 固定 batch 仿真');
     title.id = 'msm-heading';
-    panel.appendChild(title);
+    heading.appendChild(title);
+    heading.appendChild(element('span', 'msm-toggle-help', '展开 / 收起'));
+    panel.appendChild(heading);
     panel.appendChild(element('p', 'msm-intro',
       '由本机服务执行 TensorCast，结果单独展示。下方原页面仍使用浏览器解析估计；本面板不替换原结果。'));
 

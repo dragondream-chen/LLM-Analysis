@@ -45,10 +45,13 @@ python scripts/serve-msmodeling.py --msmodeling-path D:\tools\msmodeling --pytho
 ## 使用
 
 1. 顶部选择 DeepSeek-V4.1-Flash，进入“纯 P / 纯 D 仿真”。
-2. 在本地 msmodeling 面板检查连接，设置每 DP 的固定 batch。
+2. 展开顶部“本地 msmodeling”面板检查连接，设置每 DP 的固定 batch。
 3. 在原网页设置输入/输出长度、P/D 硬件与 TP/EP、容量预算和时延目标。
 4. 点击运行纯 P 或纯 D。DSpark 的每周期平均提交数单独输入，包含 anchor/bonus；AR 固定为 1。
 5. 查看原生耗时、请求/Token 吞吐、显存、Host 容量、算子分解；下载 JSON、日志或 Chrome Trace。
+
+第四页按正常字号排版，可向下滚动查看全部参数、候选表和结果。本地 msmodeling 面板默认收起，
+点击标题可展开；展开内容或运行完成后，也可继续向下滚动。
 
 本地 RAM、权重与设备显存是不同指标。`simulatorWallSeconds` 是本机执行仿真程序的耗时，
 `latencySeconds` 是目标设备的模型预测耗时，`peakMemoryGiB` 是目标设备上的模型显存估计。
